@@ -86,14 +86,15 @@ img_t downSample(img_t const img, int w, int h)
     float vw = (float)img.w / ret.w;
     float vh = (float)img.h / ret.h;
 
-    if(img.w < 800 || img.h < 800) {
+    if(img.w < ret.w || img.h < ret.h) {
+        printf("copping out\n");
         memcpy(ret.pixels, img.pixels, sizeof(pixel_t) * img.w * img.h);
         ret.w = img.w;
         ret.h = img.h;
         return ret;
     }
 
-    assert(img.w >= 800 && img.h >= 800);
+    assert(img.w >= ret.w && img.h >= ret.h);
 
     tdata_t* datas = (tdata_t*)malloc(sizeof(tdata_t) * ret.h);
 
