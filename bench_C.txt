@@ -1,0 +1,16 @@
+C$ time ./scaledownc -r 800x600 test.jpg
+test.jpg: reading pixels
+test.jpg: saving as test.out.jpg
+3.569u 0.015s 0:00.64 557.8%    0+0k 0+120io 0pf+0w
+C$ time ./scaledownc -r 800x600 test.jpg
+test.jpg: reading pixels
+test.jpg: saving as test.out.jpg
+3.623u 0.012s 0:00.68 533.8%    0+0k 0+120io 0pf+0w
+C$ time ./scaledownc -r 800x600 test.jpg
+test.jpg: reading pixels
+test.jpg: saving as test.out.jpg
+3.512u 0.011s 0:00.60 586.6%    0+0k 0+120io 0pf+0w
+C$ time ./scaledownc -r 800x600 test.jpg
+test.jpg: reading pixels
+test.jpg: saving as test.out.jpg
+3.516u 0.009s 0:00.62 566.1%    0+0k 0+120io 0pf+0w

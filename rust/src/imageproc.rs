@@ -79,7 +79,6 @@ pub fn downscale(img: &DynamicImage, new_res: &resolution::Resolution) -> Result
     // 5. flatten everything to a single array of byte values
     // 6. finally, create the image from these raw samples and return
     // This code could probably be genericized, but meh
-    println!("num threads: {}", rayon::current_num_threads());
     let rawsamples: Vec<u8> = (0..olen as u32).into_iter()
             .map(|i| -> WorkItem<_> {
                 WorkItem { 

@@ -1,0 +1,16 @@
+rust$ time target/release/scaledown -r 800x600 test.jpg
+reading test.jpg
+saving as test.out.jpg
+4.901u 0.088s 0:00.97 513.4%    0+0k 0+152io 0pf+0w
+rust$ time target/release/scaledown -r 800x600 test.jpg
+reading test.jpg
+saving as test.out.jpg
+4.892u 0.098s 0:00.90 553.3%    0+0k 0+152io 0pf+0w
+rust$ time target/release/scaledown -r 800x600 test.jpg
+reading test.jpg
+saving as test.out.jpg
+4.873u 0.105s 0:00.92 540.2%    0+0k 0+152io 0pf+0w
+rust$ time target/release/scaledown -r 800x600 test.jpg
+reading test.jpg
+saving as test.out.jpg
+4.893u 0.097s 0:00.91 547.2%    0+0k 0+152io 0pf+0w
