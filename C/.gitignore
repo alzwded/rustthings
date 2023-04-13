@@ -1,0 +1,4 @@
+*.o
+scaledownc
+*.jpg
+*log*
