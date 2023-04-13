@@ -18,7 +18,7 @@ pub fn read_image(path: &String) -> Result<DynamicImage, String> {
     }
 }
 
-// 'a is a named format specifier
+// 'a is a named lifetime specifier (assuming I got the terminology right)
 // obviously, 'static is special; there are probably other special ones
 // Why dis needed? *shrugs*
 // My guess is to clarify that whatever we put in iflat will live as long as
