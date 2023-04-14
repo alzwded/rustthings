@@ -1,0 +1,31 @@
+C -- 4.23, <170%, <40°C
+=======================
+
+C> time ./scaledownc -r 800x600 ../test.jpg 
+../test.jpg: reading pixels
+../test.jpg: saving as ../test.out.jpg
+7.108u 0.070s 0:04.23 169.5%	0+0k 0+120io 0pf+0w
+C> time ./scaledownc -r 800x600 ../test.jpg
+../test.jpg: reading pixels
+../test.jpg: saving as ../test.out.jpg
+6.895u 0.126s 0:06.17 113.6%	0+0k 0+120io 0pf+0w
+C> time ./scaledownc -r 800x600 ../test.jpg
+../test.jpg: reading pixels
+../test.jpg: saving as ../test.out.jpg
+7.134u 0.123s 0:04.33 167.4%	0+0k 0+120io 0pf+0w
+
+rust -- 6.90, 190.2%, <40°C
+===========================
+
+rust> time target/release/scaledown -r 800x600 ../test.jpg
+reading ../test.jpg
+saving as ../test.out.jpg
+12.929u 0.213s 0:06.90 190.2%	0+0k 0+152io 0pf+0w
+rust> time target/release/scaledown -r 800x600 ../test.jpg
+reading ../test.jpg
+saving as ../test.out.jpg
+13.135u 0.176s 0:06.99 190.2%	0+0k 0+152io 0pf+0w
+rust> time target/release/scaledown -r 800x600 ../test.jpg
+reading ../test.jpg
+saving as ../test.out.jpg
+13.129u 0.236s 0:07.02 190.1%	0+0k 0+152io 0pf+0w

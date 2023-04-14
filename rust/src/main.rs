@@ -52,11 +52,8 @@ fn main() {
             //       ...which is a bit magical
             println!("saving as {}", outpath);
             match imageproc::downscale(&image, &new_resolution) {
-                Ok(x) => match imageproc::write_image(&x, &outpath) {
-                    Err(e) => println!("Failed to write {}: {}", &outpath, e),
-                    // _ means don't care
-                    // () means "void" or "no-op" and is used to fill empty space
-                    _ => (),
+                Ok(x) => if let Err(e) = imageproc::write_image(&x, &outpath) {
+                    println!("Failed to write {}: {}", &outpath, e);
                 },
                 Err(e) => println!("{} failed to downsize: {}", &path, e),
             }
