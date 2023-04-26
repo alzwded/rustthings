@@ -152,6 +152,8 @@ pub fn downscale(img: &DynamicImage, new_res: &resolution::Resolution) -> Result
 
 pub fn write_image(img: &DynamicImage, path: &String) -> Result<(), String> {
     match img.save(path) {
+        // _ means don't care
+        // () means "void" or "no-op" and is used to fill empty space
         Ok(_) => Ok(()),
         Err(e) => Err(format!("Failed to write to {}: {}", path, e)),
     }
